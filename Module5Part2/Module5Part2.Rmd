@@ -44,4 +44,19 @@ yrbss %>%
   ggplot(aes(y = physical_3plus, x=weight)) +
   geom_violin()
 ```
+There would seem to be a relationship between the two variables. It is not the relationship I would expect, It seems to show that high schoolers exercise 3 or more times a week have a higher mean eight than thoes who don't.
+
+### Exercise 4
+
+```{r}
+yrbss %>%
+  group_by(physical_3plus) %>%
+  summarise(n = n())
+```
+
+Conditions: Independence and sample size
+
+Both conditions are met as the data is taken by simple random sample, and it has a large sample size.
+
+
 
