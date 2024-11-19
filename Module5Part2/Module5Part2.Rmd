@@ -100,5 +100,17 @@ null_dist %>%
 
 There are no permutations that have a difference at least as large or larger than obs_diff.
 
+### Exercise 8
 
+The error given is
+```
+Warning: Please be cautious in reporting a p-value of 0. This result is an approximation based on the number of `reps` chosen in the `generate()` step. See `get_p_value()`(`?infer::get_p_value()`) for more information."
+```
+
+There was 0 permutations that include that mean in the generated null distribution. This is not representative of the population.
+
+```{r}
+null_dist %>%
+  get_p_value(obs_stat = obs_diff, direction = "two_sided")
+```
 
