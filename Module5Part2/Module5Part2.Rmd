@@ -26,5 +26,10 @@ nrow(yrbss)
 
 ### Exercise 2
 
-...
+```{r}
+yrbss %>% 
+  skim()
+```
+
+There are 1004 missing weights from the data set.
 
