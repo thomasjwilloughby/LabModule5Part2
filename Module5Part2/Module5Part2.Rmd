@@ -91,4 +91,14 @@ ggplot(data = null_dist, aes(x = stat)) +
 ```
 
 
+### Exercise 7
+
+```{r}
+null_dist %>%
+  filter(stat >= obs_diff$stat)
+```
+
+There are no permutations that have a difference at least as large or larger than obs_diff.
+
+
 
