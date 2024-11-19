@@ -61,7 +61,7 @@ Both conditions are met as the data is taken by simple random sample, and it has
 
 ### Exercise 5
 
-Null Hypotheses: The mean weight is the same between the two groups, thoes who exercise 3+ times a week, and thoes who dont.
+Null Hypotheses: The mean weight is the same between the two groups, thoes who exercise 3+ times a week, and thoes who don't.
 $$
 H_{0} : \mu_{physical3+} = \mu_{physical3-}
 $$
