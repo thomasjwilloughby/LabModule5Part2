@@ -33,3 +33,15 @@ yrbss %>%
 
 There are 1004 missing weights from the data set.
 
+### Exercise 3
+
+```{r}
+yrbss <- yrbss %>% 
+  mutate(physical_3plus = if_else(physically_active_7d > 2, "yes", "no"))
+
+yrbss %>%
+  filter(complete.cases(physical_3plus, weight)) %>%
+  ggplot(aes(y = physical_3plus, x=weight)) +
+  geom_violin()
+```
+
