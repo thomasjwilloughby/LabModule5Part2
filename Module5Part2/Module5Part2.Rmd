@@ -142,4 +142,16 @@ ci_2
 
 We are 95% confident that the true average height lies between `r ci_2[1,1]` and `r ci_2[1,2]`
 
+### Exercise 11
 
+```{r}
+ci_3 <- yrbss %>%
+  filter(complete.cases(height)) %>%
+  specify(response = height) %>%
+  generate(reps = 1000, type = "bootstrap") %>%
+  calculate(stat = "mean") %>%
+  get_ci(level = 0.90)
+ci_3
+```
+
+The confidence interval(`r ci_2[1,1]`, `r ci_2[1,2]`) is narrower that the interval obtained in the previous exercise.
