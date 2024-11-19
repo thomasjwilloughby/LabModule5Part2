@@ -72,3 +72,23 @@ $$
 
 ### Exercise 6
 ```{r}
+obs_diff <- yrbss %>%
+  filter(complete.cases(weight, physical_3plus)) %>%
+  specify(weight ~ physical_3plus) %>%
+  calculate(stat = "diff in means", order = c("yes", "no"))
+
+
+null_dist <- yrbss %>%
+  filter(complete.cases(weight, physical_3plus)) %>%
+  specify(weight ~ physical_3plus) %>%
+  hypothesize(null = "independence") %>%
+  generate(reps = 1000, type = "permute") %>%
+  calculate(stat = "diff in means", order = c("yes", "no"))
+
+ggplot(data = null_dist, aes(x = stat)) +
+  geom_histogram() +
+  geom_vline(xintercept = obs_diff$stat, color = "red")
+```
+
+
+
